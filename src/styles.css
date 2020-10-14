@@ -1,0 +1,97 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #607d8b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+.js-clock {
+  display: none;
+}
+
+.clock {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  position: relative;
+  background: #fff
+    url(https://upload.wikimedia.org/wikipedia/commons/9/97/Ios_clock.svg)
+    no-repeat;
+  background-size: 85%;
+  background-position: center;
+}
+
+.clock::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 4px solid #f5f6f7;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  border-radius: 50%;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.25));
+}
+
+.hours {
+  width: 2px;
+  height: 40px;
+  background-color: #000;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  margin-left: -1px;
+  transform: rotateZ(30deg);
+  transform-origin: bottom;
+  border-radius: 5px;
+  transition: transform 0.1s linear;
+}
+
+.minutes {
+  width: 2px;
+  height: 80px;
+  background-color: #000;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -1px;
+  transform: rotateZ(50deg);
+  transform-origin: bottom;
+  border-radius: 5px;
+  transition: transform 0.1s linear;
+}
+
+.seconds {
+  width: 1.2px;
+  height: 80px;
+  background-color: #f44336;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -0.6px;
+  transform: rotateZ(900deg);
+  transform-origin: bottom;
+  border-radius: 5px;
+}
+
+.clock_circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #000;
+  margin-top: -5px;
+  margin-left: -5px;
+}
