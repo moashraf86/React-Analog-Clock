@@ -24,26 +24,31 @@ export default class App extends React.Component {
   }
 
   render() {
+    let seconds = this.state.date.getSeconds();
+    let seconds_degree = (seconds / 60) * 360;
+    let minutes = this.state.date.getMinutes();
+    let minutes_degree = (minutes / 60) * 360 + seconds / 60;
+    let hours = this.state.date.getHours();
+    let hours_degree = (hours / 12) * 360 + minutes / 60;
+
     return (
       <div className="clock">
         <div
           className="hours"
           style={{
-            transform: `rotate(${
-              ((this.state.date.getHours() - 12) / 12) * 360
-            }deg)`
+            transform: `rotate(${hours_degree}deg)`
           }}
         ></div>
         <div
           className="minutes"
           style={{
-            transform: `rotate(${(this.state.date.getMinutes() / 60) * 360}deg)`
+            transform: `rotate(${minutes_degree}deg)`
           }}
         ></div>
         <div
           className="seconds"
           style={{
-            transform: `rotate(${(this.state.date.getSeconds() / 60) * 360}deg)`
+            transform: `rotate(${seconds_degree}deg)`
           }}
         ></div>
         <div className="clock_circle"></div>
