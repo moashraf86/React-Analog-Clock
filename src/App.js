@@ -27,7 +27,7 @@ export default class App extends React.Component {
     let seconds = this.state.date.getSeconds();
     let seconds_degree = (seconds / 60) * 360;
     let minutes = this.state.date.getMinutes();
-    let minutes_degree = (minutes / 60) * 360 + seconds / 60;
+    let minutes_degree = (minutes / 60) * 360 + (seconds / 60) * 6;
     let hours = this.state.date.getHours();
     let hours_degree = ((hours / 12) * 360) + (minutes / 60) * 30;
 
