@@ -29,7 +29,7 @@ export default class App extends React.Component {
     let minutes = this.state.date.getMinutes();
     let minutes_degree = (minutes / 60) * 360 + seconds / 60;
     let hours = this.state.date.getHours();
-    let hours_degree = ((hours / 12) * 360) + (minutes / 60);
+    let hours_degree = ((hours / 12) * 360) + (minutes / 60) * 30;
 
     return (
       <div className="clock">
